@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
-
+import { useStateContext } from "../context";
 import { money } from "../assets";
 import CustomButton from "../components/CustomButton";
 import FormField from "../components/FormField";
@@ -9,6 +9,7 @@ import FormField from "../components/FormField";
 const CreateCampaign = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const { createCampaign } = useStateContext();
   const [form, setForm] = useState({
     name: "",
     title: "",
