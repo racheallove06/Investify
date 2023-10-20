@@ -5,6 +5,19 @@ import { useStateContext } from "../context";
 import { money } from "../assets";
 import CustomButton from "../components/CustomButton";
 import FormField from "../components/FormField";
+import { Loader } from "../components";
+const checkIfImage = async (imageUrl, callback) => {
+  try {
+    const response = await fetch(imageUrl);
+    if (response.status === 200) {
+      callback(true); // Image exists
+    } else {
+      callback(false); // Image does not exist
+    }
+  } catch (error) {
+    callback(false); // Error occurred (e.g., invalid URL)
+  }
+};
 
 const CreateCampaign = () => {
   const navigate = useNavigate();

@@ -10,15 +10,27 @@ import { ethers } from "ethers";
 import { EditionMetadataWithOwnerOutputSchema } from "@thirdweb-dev/sdk";
 
 const StateContext = createContext();
-
 export const StateContextProvider = ({ children }) => {
   const { contract } = useContract(
     "0x950E25A6262f22c77e5f4536A3101185696953A6"
   );
-  const { mutateAsync: createCampaign } = useContractWrite(
+  const { mutateAsync: createCampaign, isLoading } = useContractWrite(
     contract,
     "createCampaign"
   );
+
+  const call = async () => {
+    try {
+      const data = await createCampaign({
+        args: [_owner, _title, _description, _target, _deadline, _image],
+      });
+      console.info("contract call successs", data);
+    } catch (err) {
+      console.error("contract call failure", err);
+    }
+  };
+
+  /////////
 
   const address = useAddress();
   const connect = useMetamask();
@@ -27,18 +39,17 @@ export const StateContextProvider = ({ children }) => {
     try {
       const data = await createCampaign({
         args: [
-          address, // owner
+          address, //owner
           form.title, // title
           form.description, // description
-          form.target,
-          new Date(form.deadline).getTime(), // deadline,
-          form.image,
+          form.target, // target amount
+          new Date(form.deadline).getTime(), // deadline
+          form.image, // image
         ],
       });
-
-      console.log("contract call success", data);
+      console.log("contract call success ", data);
     } catch (error) {
-      console.log("contract call failure", error);
+      console.log("contract call failed ", error);
     }
   };
 

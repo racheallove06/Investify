@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { DisplayCampaigns } from "../components";
+import DisplayCampaigns from "../components/DisplayCampaigns";
 import { useStateContext } from "../context";
 
 const Home = () => {
