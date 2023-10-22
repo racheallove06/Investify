@@ -1,5 +1,6 @@
 import React, { useContext, createContext } from "react";
 
+import { contractAbi } from "../constants";
 import {
   useAddress,
   useContract,
@@ -12,14 +13,22 @@ import { EditionMetadataWithOwnerOutputSchema } from "@thirdweb-dev/sdk";
 const StateContext = createContext();
 export const StateContextProvider = ({ children }) => {
   const { contract } = useContract(
-    "0x950E25A6262f22c77e5f4536A3101185696953A6"
+    "0x950E25A6262f22c77e5f4536A3101185696953A6",
+    contractAbi
   );
   const { mutateAsync: createCampaign, isLoading } = useContractWrite(
     contract,
     "createCampaign"
   );
 
-  const call = async () => {
+  const call = async (
+    _owner,
+    _title,
+    _description,
+    _target,
+    _deadline,
+    _image
+  ) => {
     try {
       const data = await createCampaign({
         args: [_owner, _title, _description, _target, _deadline, _image],

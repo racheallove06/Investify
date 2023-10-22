@@ -1,22 +1,36 @@
-## Getting Started
+# CRA JavaScript Starter
 
-Create a project using this example:
+Starter kit to build with Create React App and thirdweb without additional initial configuration.
+
+## Installation
+
+Install the template with [thirdweb create](https://portal.thirdweb.com/cli/create)
 
 ```bash
-npx thirdweb create --template vite-javascript-starter
+ npx thirdweb create --template cra-javascript-starter
 ```
 
-You can start editing the page by modifying `src/main.jsx`. The page auto-updates as you edit the file.
+## Run Locally
 
-On `src/index.jsx`, you'll find our `ThirdwebProvider` wrapping your app,
-this is necessary for our [hooks](https://portal.thirdweb.com/react) and
-[UI Components](https://portal.thirdweb.com/ui-components) to work.
+Install dependencies
+
+```bash
+yarn
+```
+
+Start the server
+
+```bash
+yarn start
+```
 
 ## Environment Variables
 
-To run this project, you will need to add environment variables. Check the `.env.example` file for all the environment variables required and add it to `.env.local` file or set them up on your hosting provider.
+To run this project, you will need to add the `CLIENT_ID` variables to your .env file.
 
-### Deploy to IPFS
+You can generate your `clientId` and `secretKey` via thirdweb's [dashboard](https://thirdweb.com/create-api-key).
+
+## Deployment
 
 Deploy a copy of your application to IPFS using the following command:
 
@@ -24,19 +38,19 @@ Deploy a copy of your application to IPFS using the following command:
 yarn deploy
 ```
 
-## Learn More
+## Additional Resources
 
-To learn more about thirdweb, Vite and React, take a look at the following resources:
-
-- [thirdweb React Documentation](https://docs.thirdweb.com/react) - learn about our React SDK.
-- [thirdweb JavaScript Documentation](https://docs.thirdweb.com/react) - learn about our JavaScript/TypeScript SDK.
-- [thirdweb Portal](https://docs.thirdweb.com/react) - check our guides and development resources.
-- [Vite Documentation](https://vitejs.dev/guide/) - learn about Vite features.
-- [React documentation](https://reactjs.org/) - learn React.
+- [Documentation](https://portal.thirdweb.com)
 - [Templates](https://thirdweb.com/templates)
+- [Video Tutorials](https://youtube.com/thirdweb_)
+- [Blog](https://blog.thirdweb.com)
 
-You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
+## Contributing
 
-## Join our Discord!
+Contributions and [feedback](https://feedback.thirdweb.com) are always welcome!
 
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
+Please visit our [open source page](https://thirdweb.com/open-source) for more information.
+
+## Need help?
+
+For help, join the [discord](https://discord.gg/thirdweb) or visit our [support page](https://support.thirdweb.com).
