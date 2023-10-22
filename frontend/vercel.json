@@ -6,7 +6,7 @@
       "use": "@vercel/node",
       "config": {
         "commands": {
-          "build": " vite build"
+          "build": "vite build"
         }
       }
     }
@@ -16,5 +16,6 @@
       "source": "/(.*)",
       "destination": "/"
     }
-  ]
+  ],
+  "framework": "Vite"
 }
