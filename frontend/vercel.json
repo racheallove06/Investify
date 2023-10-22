@@ -1,13 +1,20 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "vite.config.js",
       "use": "@vercel/node",
       "config": {
         "commands": {
-          "build": "npm install && vite build"
+          "build": " vite build"
         }
       }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
