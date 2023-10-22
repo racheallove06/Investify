@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "NODE_ENV=production vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "deploy": "vite build && npx thirdweb@latest upload dist"
   },
