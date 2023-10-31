@@ -3,7 +3,7 @@ import {
   dashboard,
   logout,                   
   payment,
-  profile,
+  profile,                           
   withdraw,            
 } from "../assets";
 
