@@ -4,7 +4,7 @@ import {
   logout,   
   payment,
   profile,
-  withdraw,
+  withdraw,            
 } from "../assets";
 
 export const navlinks = [
