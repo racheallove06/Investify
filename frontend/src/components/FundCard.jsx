@@ -1,6 +1,6 @@
 import React from "react";
 
-import { tagType, thirdweb } from "../assets";
+import { tagType, thirdweb } from "../assets";                  
 import { daysLeft } from "../utils/index";
 
 const FundCard = ({
