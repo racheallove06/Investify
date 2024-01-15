@@ -1,7 +1,7 @@
 import React from "react";
 
 const FormField = ({
-  labelName,
+  labelName,                    
   placeholder,
   inputType,
   isTextArea,
